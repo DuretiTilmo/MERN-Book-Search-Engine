@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
-
+// import { useMutation, useQuery } from '@apollo/client';
 import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
+// import { GET_ME } from '../../utils/mutations';
+// import { QUERY_PROFILE } from '../../utils/mutations';
+
+
 const SignupForm = () => {
   // set initial form state
+
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   // set state for form validation
   const [validated] = useState(false);
@@ -48,7 +53,6 @@ const SignupForm = () => {
       password: '',
     });
   };
-
   return (
     <>
       {/* This is needed for the validation functionality above */}
