@@ -1,12 +1,21 @@
-import { gql } from '@apollo/client';
+  
+import gql from "graphql-tag";
 
 export const GET_ME = gql`
-query getme($email: String!, $password: String!) {
-    getme(email: $email, password: $password) {
-        token
-    user { 
+  {
+    me {
       _id
       username
+      email
+      bookCount
+      savedBooks {
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
     }
   }
 `;
